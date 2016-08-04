@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%=config.language.substring(0, 2) %>">
 <head>
     <meta charset="utf-8">
     <%
@@ -28,6 +28,7 @@
         google_plus:    theme.miscellaneous.open_graph.google_plus,
     }) %>
     <%- meta(page) %>
+    <%- autoCanonical(config, page) %>
 
     <% if (theme.rss) { %>
         <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml" />
@@ -38,7 +39,7 @@
     <% } %>
 
     <%- css('vendor/font-awesome/css/font-awesome.min') %>
-    <%- css('vendor/open-sans/styles') %>
+    <%- css('vendor/noto-sans/styles') %>
     <%- css('vendor/source-code-pro/styles') %>
 
     <%- css('css/style') %>
