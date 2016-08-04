@@ -28,3 +28,10 @@ profile:
     tag: 'tag'
     posts: 'posts'
     tags: 'tags'
+insight:
+    hint: '검색하세요'
+    posts: 'posts'
+    pages: 'pages'
+    categories: 'categories'
+    tags: 'tags'
+    untitled: '(Untitled)'

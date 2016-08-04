@@ -7,16 +7,18 @@
         <% if (post.link || post.title) { %>
             <header class="article-header">
                 <%- partial('post/title', { class_name: 'article-title' }) %>
-                <div class="article-meta">
-                    <%- partial('post/date', { class_name: 'article-date', date_format: null }) %>
-                    <%- partial('post/category') %>
-                    <%- partial('post/tag') %>
-                </div>
+                <% if (post.layout != 'page') { %>
+                    <div class="article-meta">
+                        <%- partial('post/date', { class_name: 'article-date', date_format: null }) %>
+                        <%- partial('post/category') %>
+                        <%- partial('post/tag') %>
+                    </div>
+                <% } %>
             </header>
         <% } %>
         <div class="article-entry" itemprop="articleBody">
-        <% if (index) { %>
-            <p><%- excerpt(post) %></p>
+        <% if (index && post.excerpt) { %>
+            <p><%- post.excerpt %></p>
             <p class="article-more-link">
                 <a href="<%- url_for(post.path) %>#more"><%= __('article.more') %></a>
             </p>
